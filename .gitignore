@@ -1,0 +1,31 @@
+node_modules/
+package-lock.json
+yarn-error.log
+yarn.lock
+pnpm-lock.yaml
+.env
+.env.*
+coverage/
+dist/
+*.log
+*.tsbuildinfo
+*.tgz
+
+# Logs directory
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Debugging files
+*.pid
+*.seed
