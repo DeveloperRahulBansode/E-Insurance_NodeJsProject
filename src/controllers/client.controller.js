@@ -5,6 +5,7 @@ import * as ClientService from '../services/client.service';
 
 export const newClient = async (req, res, next) => {
   try {
+    req.body.role = 'client';
     const data = await ClientService.newClient(req.body);
     if (!data.success) {
       return res.status(HttpStatus.BAD_REQUEST).json({

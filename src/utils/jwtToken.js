@@ -2,13 +2,13 @@
 import jwt from 'jsonwebtoken';
 
 const accessSecrets = {
-    user: process.env.ACCESS_SECRET_CLIENT,
+    client: process.env.ACCESS_SECRET_CLIENT,
     admin: process.env.ACCESS_SECRET_ADMIN,
     agent: process.env.ACCESS_SECRET_AGENT
 };
 
 const refreshSecrets = {
-    user: process.env.REFRESH_SECRET_CLIENT,
+    client: process.env.REFRESH_SECRET_CLIENT,
     admin: process.env.REFRESH_SECRET_ADMIN,
     agent: process.env.REFRESH_SECRET_AGENT
 };

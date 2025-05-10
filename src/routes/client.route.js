@@ -1,14 +1,11 @@
 import express from 'express';
 import * as clientController from '../controllers/client.controller';
-import { cli } from 'winston/lib/winston/config';
-// import { newUserValidator } from '../validators/user.validator';
+import { newClientValidator } from '../validators/client.validator';
 
 const router = express.Router();
 
-
-
 //route to create a new user
-router.post('', clientController.newClient);
+router.post('',newClientValidator, clientController.newClient);
 
 //route to login a user
 router.post('/login', clientController.clientLogin);
