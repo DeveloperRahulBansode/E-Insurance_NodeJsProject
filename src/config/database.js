@@ -7,7 +7,7 @@ dotenv.config();
 export { DataTypes } from 'sequelize';
 
 let DATABASE = process.env.DATABASE;
-let USERNAME = process.env.USERNAME;
+let USERNAME = process.env.USERNAME_DB;
 let PASSWORD = process.env.PASSWORD;
 let HOST = process.env.HOST;
 let PORT = process.env.PORT;
