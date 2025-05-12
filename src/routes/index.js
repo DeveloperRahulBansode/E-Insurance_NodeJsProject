@@ -2,6 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 import clientRoute from './client.route';
+import agentRoute from './agent.route';
 /**
  * Function contains Application routes
  *
@@ -13,6 +14,7 @@ const routes = () => {
   });
   
   router.use('/clients', clientRoute);
+  router.use('/agents', agentRoute);
 
   return router;
 };
