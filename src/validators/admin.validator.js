@@ -1,13 +1,13 @@
 import Joi from '@hapi/joi';
 
-export const newAgentValidator = (req, res, next) => {
+export const newAdminValidator = (req, res, next) => {
   const schema = Joi.object({
-    agentID: Joi.number().integer(),
+    adminID: Joi.number().integer(),
     fullName: Joi.string().min(3).required(),
     email: Joi.string().min(3).required(),
     password: Joi.string().min(3).required(),
     mobileNumber: Joi.string().min(3).required(),
-    role: Joi.string().valid('agent').default('agent')
+    role: Joi.string().valid('admin').default('admin')
    
   });
   const { error, value } = schema.validate(req.body);
