@@ -1,11 +1,13 @@
 import express from 'express';
 import * as agentController from '../controllers/agent.controller';
 import { newAgentValidator } from '../validators/agent.validator';
+import { userAuth } from '../middlewares/auth.middleware';
+import { hasRole } from '../middlewares/role';
 
 const router = express.Router();
 
 //route to create a new agent
-router.post('',newAgentValidator, agentController.newAgent);
+router.post('',userAuth,hasRole(['admin']),newAgentValidator, agentController.newAgent);
 
 //route to login a agent
 router.post('/login', agentController.agentLogin);

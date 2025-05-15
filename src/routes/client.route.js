@@ -1,11 +1,13 @@
 import express from 'express';
 import * as clientController from '../controllers/client.controller';
 import { newClientValidator } from '../validators/client.validator';
+import { userAuth } from '../middlewares/auth.middleware';
+import { hasRole } from '../middlewares/role';
 
 const router = express.Router();
 
 //route to create a new user
-router.post('',newClientValidator, clientController.newClient);
+router.post('',userAuth,hasRole(['agent']), newClientValidator,clientController.newClient);
 
 //route to login a user
 router.post('/login', clientController.clientLogin);
